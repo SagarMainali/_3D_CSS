@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>translateZ</title>
+     <style>
+          body {
+               background: #444;
+               height: 100vh;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               perspective: 350px;
+               font-size: 7rem;
+          }
+
+          .box {
+               height: 200px;
+               width: 200px;
+               position: relative;
+               transform-style: preserve-3d;
+               transform: rotateX(30deg);
+               cursor: pointer;
+               transition: 1s ease-in-out;
+          }
+
+          .face {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100%;
+               width: 100%;
+               position: absolute;
+               opacity: .6;
+          }
+
+          .front {
+               background-color: blue;
+               transform: translateZ(100px);
+          }
+
+          .back {
+               background-color: green;
+               transform: rotateY(180deg) translateZ(100px);
+          }
+
+          .top {
+               background-color: white;
+               transform: rotateX(90deg) translateZ(100px);
+          }
+
+          .bottom {
+               background-color: yellow;
+               transform: rotateX(-90deg) translateZ(100px);
+               
+          }
+
+          .left {
+               background-color: red;
+               transform: rotateY(-90deg) translateZ(100px);
+          }
+
+          .right {
+               background-color: orange;
+               transform: rotateY(90deg) translateZ(100px);
+          }
+
+          .box:hover{
+               transform: rotateX(330deg) rotateY(360deg);
+          }
+     </style>
+</head>
+
+<body>
+     <div class="box">
+          <div class="face front">1</div>
+          <div class="face back">2</div>
+          <div class="face left">3</div>
+          <div class="face right">4</div>
+          <div class="face top">5</div>
+          <div class="face bottom">6</div>
+     </div>
+</body>
+
+</html>
